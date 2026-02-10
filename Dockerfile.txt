@@ -4,8 +4,9 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install openjdk-8-jdk 
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz  -O /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-$TOMCAT_VERSION/* /usr/local/tomcat/
-ADD https://maybatch25.s3.ap-south-1.amazonaws.com/SampleWebApp123%23%235.0-SNAPSHOT.war /usr/local/tomcat/webapps/
+ADD https://nov2025batch.s3.ap-south-2.amazonaws.com/SampleWebApp123%23%235.0-SNAPSHOT.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD /usr/local/tomcat/bin/catalina.sh run
+
 
 
